@@ -1,2 +1,2 @@
-#!/usr/bin/python3
-python -m py_compile $PYFILE
+#!/bin/bash
+python -m compileall $PYFILE -b $PYFILE'c'
