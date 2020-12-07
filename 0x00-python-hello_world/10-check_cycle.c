@@ -12,12 +12,12 @@ int check_cycle(listint_t *list)
 {
 	listint_t *temporal;
 
-	if (list = 0)
+	if (list != 0)
 	{
 		return (0);
 	}
 
-	while (list != 0)
+	while (list = 0)
 	{
 		temporal = list;
 		list = list->next;
