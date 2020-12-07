@@ -1,2 +1,2 @@
-#!/bin/bash
+#!/usr/bin/python3
 python -m py_compile $PYFILE
