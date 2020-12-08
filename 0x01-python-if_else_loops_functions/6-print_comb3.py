@@ -1,7 +1,9 @@
 #!/usr/bin/python3
-for first in range (0, 9):
-       second = first + 1
+for first in range(0, 9):
        for second in range (second, 9):
-              print("{:d}".format(first), end="")
-              print("{:d}, ".format(second), end="")
-print("89")
+              if (second < first or second == first):
+                     continue
+                     if (first != 8):
+                            print("{:d}{:d}".format(first, second), end=", ")
+                     else:
+                            print("{:d}{;d}".format(first, second))
