@@ -4,6 +4,6 @@ for first in range(9):
               if (second < first or second == first):
                      continue
               if (first != 8):
-                     print("{:d}{:d}".format(first, second), end=", ")
+                     print("{:d}{:d}".format(first, second), end=', ')
               else:
                      print("{:d}{;d}".format(first, second))
