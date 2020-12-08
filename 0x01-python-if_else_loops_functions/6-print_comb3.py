@@ -6,4 +6,4 @@ for first in range(9):
               if (first != 8):
                      print("{:d}{:d}".format(first, second), end=', ')
               else:
-                     print("{:d}{;d}".format(first, second))
+                     print("{:d}{:d}".format(first, second))
