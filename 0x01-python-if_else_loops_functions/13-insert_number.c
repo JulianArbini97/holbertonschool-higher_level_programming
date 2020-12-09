@@ -1,30 +1,46 @@
+#include "lists.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include "lists.h"
 
 /**
- * insert_node - inserts new node to linked list
- * @head: head of singly linked list
- * @number: input value
- * Return: the address of the new node, or NULL if it failed
+ * insert_node - insert node at right space
+ *
+ * @head: the head of the list
+ * @number: the value of the node
+ *
+ * Return: pointer to the new node
  */
 
 listint_t *insert_node(listint_t **head, int number)
 {
-	listint_t *insertnode, *temporal;
+  listint_t *new;
+  listint_t *actual;
 
-	temporal = *head;
-	if (!head)
-		return (NULL);
-	insertnode = malloc(sizeof(listint_t));
-	if (!insertnode)
-		return (NULL);
-	insertnode->n = number;
-	if (!temporal || temporal->n >= number)
+  current = *actual;
+
+  new = malloc(sizeof(listint_t));
+  if (new == NULL)
+    return (NULL);
+
+  new->n = number;
+
+  if (*head == NULL)
+    *head = new;
+  else
+    {
+      if (number < actual->n)
 	{
-		insertnode->next = temporal;
-		*head = insertnode;
-		return (insertnode);
+	  new->next = actual;
+	  *head = new;
 	}
-	return (insertnode);
-}
+      else
+	{
+	  while (actual->next && number > actual->next->n)
+	    actual = actual->next;
+
+	  new->next = actual->next;
+	  actual->next = new;
+	}
+    }
+  return (new);
+ }
