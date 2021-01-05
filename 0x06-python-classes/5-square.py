@@ -1,39 +1,36 @@
 #!/usr/bin/python3
 """
-Class Square: Defines a square
+Class Square: creates a square class
 """
 
 
 class Square:
-    """ class square """
+    """create class"""
     def __init__(self, size=0):
-        """ Initialize attributes"""
-        self.size = size
+        """initializes data"""
+        self.__size = size
 
-    @property:
+    @property
     def size(self):
-        """ Initialize attributes"""
         return self.__size
 
     @size.setter
     def size(self, value):
-        """ sets the size with safe Assignment"""
         if type(value) is not int:
             raise TypeError("size must be an integer")
-        if value < 0:
+        elif value < 0:
             raise ValueError("size must be >= 0")
-        self.__value = value
+        else:
+            self.__size = value
 
     def area(self):
-        """ sets the size with safe Assignment"""
-        return (self.__size ** 2)
+        """calculates area"""
+        return int(self.__size) * int(self.__size)
 
     def my_print(self):
-        """ prints in stdout the square with the character # """
-        if self.size > 0:
-            for a in range(self.size):
-                for b in range(self.size):
-                    print("#", end='')
-                print()
-        else:
+        """print square"""
+        if self.__size == 0:
             print()
+        else:
+            for i in range(self.__size):
+                print("#" * self.__size)
