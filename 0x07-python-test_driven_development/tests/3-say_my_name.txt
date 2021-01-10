@@ -1,0 +1,67 @@
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+>>> say_my_name("pepe", "martinez")
+My name is pepe martinez
+>>> say_my_name("pepe")
+My name is pepe 
+>>> say_my_name("", "martinez")
+My name is  martinez
+>>> try:
+...     say_my_name(None, "martinez")
+... except Exception as e:
+...     print(e)
+first_name must be a string
+>>> try:
+...     say_my_name("pepe", None)
+... except Exception as e:
+...     print(e)
+last_name must be a string
+>>> try:
+...     say_my_name(None, None)
+... except Exception as e:
+...     print(e)
+first_name must be a string
+>>> try:
+...     say_my_name(7, "martinez")
+... except Exception as e:
+...     print(e)
+first_name must be a string
+>>> try:
+...     say_my_name((1, 2), "martinez")
+... except Exception as e:
+...     print(e)
+first_name must be a string
+>>> try:
+...     say_my_name([1, 2], "martinez")
+... except Exception as e:
+...     print(e)
+first_name must be a string
+>>> try:
+...     say_my_name({1, 2}, "martinez")
+... except Exception as e:
+...     print(e)
+first_name must be a string
+>>> try:
+...     say_my_name("pepe", 8)
+... except Exception as e:
+...     print(e)
+last_name must be a string
+>>> try:
+...     say_my_name("pepe", (1, 2))
+... except Exception as e:
+...     print(e)
+last_name must be a string
+>>> try:
+...     say_my_name("pepe", {1, 2})
+... except Exception as e:
+...     print(e)
+last_name must be a string
+>>> try:
+...     say_my_name("pepe", [1, 2])
+... except Exception as e:
+...     print(e)
+last_name must be a string
+>>> try:
+...     say_my_name()
+... except Exception as e:
+...     print(e)
+say_my_name() missing 1 required positional argument: 'first_name'

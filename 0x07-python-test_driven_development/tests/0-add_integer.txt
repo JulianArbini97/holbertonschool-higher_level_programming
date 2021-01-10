@@ -1,0 +1,55 @@
+>>> add_integer = __import__('0-add_integer').add_integer
+>>> add_integer(2, 5)
+7
+>>> add_integer(2, 5.6)
+7
+>>> add_integer(5.6, 2)
+7
+>>> add_integer(5, -2)
+3
+>>> add_integer(5.5, -3)
+2
+>>> add_integer(-15, 2)
+-13
+>>> add_integer(0, 0)
+0
+>>> try:
+...	print(add_integer(4, "string"))
+... except Exception as e:
+... 	   print(e)
+b must be an integer
+>>> try:
+...	print(add_integer("string", 4))
+... except Exception as e:
+... 	   print(e)
+a must be an integer
+>>> try:
+...     print(add_integer("hola", "hola"))
+... except Exception as e:
+...     print(e)
+a must be an integer
+>>> try:
+...     print(add_integer())
+... except Exception as e:
+...     print(e)
+add_integer() missing 1 required positional argument: 'a'
+>>> try:
+...     print(add_integer(None))
+... except Exception as e:
+...     print(e)
+a must be an integer
+>>> try:
+...     print(add_integer([1, 2], 3))
+... except Exception as e:
+...     print(e)
+a must be an integer
+>>> try:
+...     print(add_integer((1, 2), 3))
+... except Exception as e:
+...     print(e)
+a must be an integer
+>>> try:
+...     print(add_integer({"K1": 1}, 2))
+... except Exception as e:
+...     print(e)
+a must be an integer
