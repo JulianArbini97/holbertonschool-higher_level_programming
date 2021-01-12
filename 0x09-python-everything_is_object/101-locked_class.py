@@ -3,6 +3,7 @@
 Comment
 """
 
+
 class LockedClass:
     """ comment """
     __slots__ = ['first_name']
