@@ -51,3 +51,9 @@ True
 
 >>> issubclass(MyList, list)
 True
+
+>>> l2 = MyList(my_list)
+>>> l2 = [3, 7, 0, 1, 6]
+>>> l2.print_sorted()
+Traceback (most recent call last):
+AttributeError: 'list' object has no attribute 'print_sorted'
