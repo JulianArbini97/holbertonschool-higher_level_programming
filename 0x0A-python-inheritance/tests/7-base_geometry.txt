@@ -1,4 +1,5 @@
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
 >>> bg = BaseGeometry()
 
 >>> 'area' in dir(BaseGeometry)
@@ -32,15 +33,15 @@ Traceback (most recent call last):
 ...
 TypeError: name must be an integer
 
+>>> bg.integer_validator("name", True)
+Traceback (most recent call last):
+...
+TypeError: name must be an integer
+
 >>> bg.integer_validator("Test", [3])
 Traceback (most recent call last):
 ...
 TypeError: Test must be an integer
-
->>> bg.integer_validator("name", 4)
-Traceback (most recent call last):
-...
-TypeError: name must be an integer
 
 >>> bg.integer_validator("Test", (4, ))
 Traceback (most recent call last):
@@ -71,4 +72,3 @@ TypeError: integer_validator() missing 2 required positional arguments: 'name' a
 Traceback (most recent call last):
 ...
 TypeError: integer_validator() missing 1 required positional argument: 'value'
-
