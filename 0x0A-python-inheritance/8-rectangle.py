@@ -16,6 +16,9 @@ class BaseGeometry:
             raise ValueError("{} must be greater than 0".format(name))
 
 
+""" Program that creates a Rectangle and intance its values """
+
+
 class Rectangle(BaseGeometry):
     """ the inherit from BaseGeometry """
     def __init__(self, width, height):
