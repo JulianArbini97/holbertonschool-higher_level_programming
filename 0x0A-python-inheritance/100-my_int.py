@@ -3,6 +3,7 @@
 
 
 class MyInt(int):
+    """ comment """
     def __eq__(self, number):
         """ comment """
         return False
