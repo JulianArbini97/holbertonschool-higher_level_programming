@@ -25,6 +25,8 @@ Traceback (most recent call last):
 ...
 ValueError: name must be greater than 0
 
+>>> bg.integer_validator("name", 4)
+
 >>> bg.integer_validator("name", "last")
 Traceback (most recent call last):
 ...
@@ -34,6 +36,11 @@ TypeError: name must be an integer
 Traceback (most recent call last):
 ...
 TypeError: Test must be an integer
+
+>>> bg.integer_validator("name", 4)
+Traceback (most recent call last):
+...
+TypeError: name must be an integer
 
 >>> bg.integer_validator("Test", (4, ))
 Traceback (most recent call last):
@@ -64,3 +71,4 @@ TypeError: integer_validator() missing 2 required positional arguments: 'name' a
 Traceback (most recent call last):
 ...
 TypeError: integer_validator() missing 1 required positional argument: 'value'
+
