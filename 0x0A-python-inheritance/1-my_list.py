@@ -3,6 +3,7 @@
 
 
 class MyList(list):
+    """ class """
     def print_sorted(self):
         """ function to sort order """
         new_list = self[:]
