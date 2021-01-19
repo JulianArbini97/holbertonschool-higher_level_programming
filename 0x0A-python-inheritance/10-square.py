@@ -22,8 +22,8 @@ class Rectangle(BaseGeometry):
         """ init function """
         self.__width = width
         self.__height = height
-        BaseGeometry.integer_validator(self, width, self.__width)
-        BaseGeometry.integer_validator(self, height, self.__height)
+        BaseGeometry.integer_validator(self, "width", self.__width)
+        BaseGeometry.integer_validator(self, "height", self.__height)
 
     def area(self):
         """ funct that gives the area """
