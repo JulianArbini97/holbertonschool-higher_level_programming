@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""  function that returns the dict descr with simple data structure """
+""" function that returns the dict descr with simple data structure """
 MyClass = __import__('8-my_class').MyClass
 
 
