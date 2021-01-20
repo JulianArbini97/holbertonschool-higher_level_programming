@@ -7,10 +7,10 @@ def pascal_triangle(n):
     my_list = []
     if n <= 0:
         return my_list
-    
+
     my_list
     a = 1
-    for i in range (1, n + 1):
+    for i in range(1, n + 1):
         if i == 1:
             my_list.append(str(a))
         else:
