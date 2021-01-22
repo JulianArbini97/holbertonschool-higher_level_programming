@@ -8,7 +8,7 @@ class Square(Rectangle):
     def __init__(self, size, x=0, y=0, id=None):
         """ comment method """
         self.size = size
-        super().__init__(size, size, x, y, id)       
+        super().__init__(size, size, x, y, id)
 
     def __str__(self):
         """ overriding the __str__ method that returns a custom string """
