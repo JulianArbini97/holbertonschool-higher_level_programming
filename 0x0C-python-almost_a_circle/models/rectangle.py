@@ -95,3 +95,14 @@ class Rectangle(Base):
         else:
             for arg in range(len(args)):
                 setattr(self, attributes[arg], args[arg])
+
+    def to_dictionary(self):
+        """ dictionary of rectangle """
+        the_dict = {
+            'id': self.id,
+            'width': self.width,
+            'height': self.height,
+            'x': self.x,
+            'y': self.y
+        }
+        return (the_dict)
