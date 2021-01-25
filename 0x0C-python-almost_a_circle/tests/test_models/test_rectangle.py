@@ -281,10 +281,10 @@ class TestingRectangle(unittest.TestCase):
             rect2 = str(self)
 
         rect3 = Rectangle(1, 2)
-        self.assertEqual(str(rect3), "[Rectangle] (66) 0/0 - 1/2")
+        self.assertEqual(str(rect3), "[Rectangle] (67) 0/0 - 1/2")
 
         rect4 = Rectangle(1, 2, 3)
-        self.assertEqual(str(rect4), "[Rectangle] (67) 3/0 - 1/2")
+        self.assertEqual(str(rect4), "[Rectangle] (68) 3/0 - 1/2")
 
         rect5 = Rectangle(1, 2, 3, 4, 5)
         self.assertEqual(str(rect5), "[Rectangle] (5) 3/4 - 1/2")
@@ -416,3 +416,55 @@ class TestingRectangle(unittest.TestCase):
         r2 = Rectangle(10, 10, 10, 10)
         r2.update(x=1, height=4, width=3)
         self.assertEqual(str(r2), "[Rectangle] (9) 1/10 - 3/4")
+
+    def test_display_1(self):
+        """test output 1"""
+        r1 = Rectangle(2, 3)
+        captureOutput = io.StringIO()
+        sys.stdout = captureOutput
+        r1.display()
+        self.assertEqual(captureOutput.getvalue(), ("##\n##\n##\n"))
+
+        with self.assertRaises(TypeError):
+            """ test output 2 """
+            r2 = Rectangle()
+            captureOutput = io.StringIO()
+            sys.stdout = captureOutput
+            r2.display()
+        
+        with self.assertRaises(TypeError):
+            """ test output 3 """
+            r3 = Rectangle(None)
+            captureOutput = io.StringIO()
+            sys.stdout = captureOutput
+            r3.display()
+
+        with self.assertRaises(TypeError):
+            """ test output 4 """
+            lista = []
+            r4 = Rectangle(lista)
+            captureOutput = io.StringIO()
+            sys.stdout = captureOutput
+            r4.display()
+
+        with self.assertRaises(TypeError):
+            """ test output 5 """
+            r5 = Rectangle(1)
+            captureOutput = io.StringIO()
+            sys.stdout = captureOutput
+            r5.display()
+
+            r6 = Square(2, 2, 2)
+            captureOutput = io.StringIO()
+            sys.stdout = captureOutput
+            r6.display()
+            self.assertEqual(captureOutput.getvalue(), ("\n\n##\n##\n"))
+
+            r7 = Rectangle(2, 3, 2)
+            captureOutput = io.StringIO()
+            sys.stdout = captureOutput
+            r7.display()
+            self.assertEqual(captureOutput.getvalue(), ("\n\n##\n##\n##\n"))
+
+if __name__ == "__main__":
+    unittest.main()
