@@ -104,7 +104,6 @@ class TestingBase(unittest.TestCase):
         jstrg = Base.to_json_string([new_dict2])
         self.assertEqual(new_dict2, {'y': 0, 'height': 4, 'width': 5, 'x': 0, 'id': 5})
 
-
         with self.assertRaises(TypeError):
             Rect3 = Rectangle(1)
             new_dict3 = Rect3.to_dictionary()
@@ -148,7 +147,7 @@ class TestingBase(unittest.TestCase):
         r1 = Rectangle(2, 4)
         r2 = Rectangle(2, 4)
         Rectangle.save_to_file([r1, r2])
-        lista = [{"id": 3, "width": 2, "y": 0, "x": 0, "height": 4}, 
+        lista = [{"id": 3, "width": 2, "y": 0, "x": 0, "height": 4},
                  {"id": 4, "width": 2, "y": 0, "x": 0, "height": 4}]
         with open("Rectangle.json", "r") as file:
             file1 = file.read()
@@ -180,7 +179,6 @@ class TestingBase(unittest.TestCase):
                     {'x': 0, 'width': 6, 'id': 2, 'height': 7, 'y': 0},
                     {'x': 0, 'width': 8, 'id': 3, 'height': 9, 'y': 0}]
             self.assertEqual(list_output, lista)
-
 
     def test3_json_to_file(self):
         """ test json string into file"""

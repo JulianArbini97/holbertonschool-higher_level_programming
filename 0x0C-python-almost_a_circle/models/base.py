@@ -85,8 +85,6 @@ class Base:
                 result = csv.DictWriter(my_file, fieldnames=headers)
                 result.writerows(new_list)
 
-
-
     @classmethod
     def load_from_file_csv(cls):
         """ load from csv """
@@ -99,8 +97,8 @@ class Base:
                 for i in csvFile:
                     TempList = []
                     for j in i:
-                        TempList.append(int(j))        
-                    
+                        TempList.append(int(j))
+
                     if cls.__name__ == "Rectangle":
                         keys = ['id', 'width', 'height', 'x', 'y']
                         for x in range(len(TempList)):
@@ -111,5 +109,5 @@ class Base:
                         for x in range(len(TempList)):
                             MyDict[keys[x]] = TempList[x]
                         MyList.append(cls.create(**MyDict))
-                
+
         return MyList

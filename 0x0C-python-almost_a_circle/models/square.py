@@ -85,4 +85,4 @@ class Square(Rectangle):
             'x': self.__x,
             'y': self.__y
         }
-        return the_dict       
+        return the_dict

@@ -37,7 +37,6 @@ class Rectangle(Base):
             raise ValueError("y must be >= 0")
         self.__y = y
 
-
     @property
     def width(self):
         """ Retriebe the width of rectangle """
