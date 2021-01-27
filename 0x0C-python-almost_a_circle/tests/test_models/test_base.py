@@ -225,6 +225,13 @@ class TestingBase(unittest.TestCase):
         with self.assertRaises(TypeError):
             Square.save_to_file()
 
+    def test12_json_to_file10(self):
+        """ test json string into file """
+        Base._Base__nb_objects = 0
+        Rectangle.save_to_file(None)
+        with open("Rectangle.json") as MyFile:
+            self.assertEqual(MyFile.read(), "[]")
+
     def test1_dict_to_inst(self):
         """ dict to instance """
         Base._Base__nb_objects = 0
