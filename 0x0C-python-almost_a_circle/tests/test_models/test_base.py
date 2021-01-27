@@ -3,6 +3,7 @@
 import unittest
 import sys
 import io
+import os
 from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
@@ -104,7 +105,7 @@ class TestingBase(unittest.TestCase):
         new_dict2 = Rect2.to_dictionary()
         jstrg = Base.to_json_string([new_dict2])
         self.assertEqual(new_dict2, {'y': 0, 'height': 4,
-                                     'width': 5, 'x': 0, 'id': 3})
+                                     'width': 5, 'x': 0, 'id': 1})
 
         with self.assertRaises(TypeError):
             Rect3 = Rectangle(1)
