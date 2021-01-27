@@ -296,6 +296,22 @@ class TestingBase(unittest.TestCase):
         list_square_out = Square.load_from_file()
         self.assertEqual([i.__dict__ for i in MyList], 
                          [i.__dict__ for i in list_square_out])
+
+    def test3_load_from_file(self):
+        """ laod from file """
+        Base._Base__nb_objects = 0
+        if os.path.exists("Square.json") is True:
+            Square.save_to_file([])
+        new = Square.load_from_file()
+        self.assertEqual(new, [])
+    
+    def test4_load_from_file(self):
+        """ load from file """
+        Base._Base__nb_objects = 0
+        if os.path.exists("Square.json") is True:
+            os.remove("Square.json")
+        new = Square.load_from_file()
+        self.assertEqual(new, [])
             
 
     def test_create0(self):
