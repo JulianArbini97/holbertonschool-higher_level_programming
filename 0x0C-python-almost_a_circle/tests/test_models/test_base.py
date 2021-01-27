@@ -371,5 +371,19 @@ class TestingBase(unittest.TestCase):
             list_sq_output = [s1.to_dictionary(), s2.to_dictionary()]
             self.assertEqual(json.dumps(list_sq_output), my_file.read())
 
+    def testsavetofile(self):
+        """ test save to file"""
+        Base.save_to_file([])
+        with open("Base.json") as MyFile:
+            self.assertEqual(MyFile.read(), "[]")
+        Base.save_to_file(None)
+        with open("Base.json") as MyFile:
+            self.assertEqual(MyFile.read(), "[]")
+
+    def testsavetofile1(self):
+        """ error save to file"""
+        with self.assertRaises(AttributeError):
+            Base.save_to_string()
+
 if __name__ == "__main__":
     unittest.main()
