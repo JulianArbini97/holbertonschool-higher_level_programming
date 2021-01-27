@@ -368,5 +368,6 @@ class TestingBase(unittest.TestCase):
         """ error save to file"""
         with self.assertRaises(TypeError):
             Square.from_json_string()
+
 if __name__ == "__main__":
     unittest.main()
