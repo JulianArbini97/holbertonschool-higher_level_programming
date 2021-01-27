@@ -314,5 +314,8 @@ class TestingBase(unittest.TestCase):
         s3 = Square.create(**{ 'id': 89, 'size': 1, 'x': 2 })
         self.assertEqual(s3.__str__(), "[Square] (89) 2/0 - 1")
 
+        s4 = Square.create(**{ 'id': 89, 'size': 1, 'x': 2, 'y': 3 })
+        self.assertEqual(s4.__str__(), "[Square] (89) 2/3 - 1")
+
 if __name__ == "__main__":
     unittest.main()
