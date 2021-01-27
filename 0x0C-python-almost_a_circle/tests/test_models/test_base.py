@@ -246,6 +246,11 @@ class TestingBase(unittest.TestCase):
         Square.save_to_file(None)
         with open("Rectangle.json") as MyFile:
             self.assertEqual(MyFile.read(), "[]")
+    
+    def test14_json_to_file(self):
+        """ load from file """
+        with self.assertRaises(AttributeError):
+            Square.save_to_string()
 
     def test1_dict_to_inst(self):
         """ dict to instance """
