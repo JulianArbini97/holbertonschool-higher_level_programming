@@ -240,6 +240,13 @@ class TestingBase(unittest.TestCase):
         with open("Rectangle.json") as MyFile:
             self.assertEqual(MyFile.read(), "[]")
 
+    def test13_json_to_file(self):
+        """ load from file """
+        Base._Base__nb_objects = 0
+        Square.save_to_file(None)
+        with open("Rectangle.json") as MyFile:
+            self.assertEqual(MyFile.read(), "[]")
+
     def test1_dict_to_inst(self):
         """ dict to instance """
         Base._Base__nb_objects = 0
