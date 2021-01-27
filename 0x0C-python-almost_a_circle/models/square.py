@@ -48,11 +48,13 @@ class Square(Rectangle):
     @x.setter
     def x(self, value):
         """ set private instance attribute x """
-        if type(value) is not int:
+        if type(value) is int:
+            if value >= 0:
+                self.__x = value
+            else:
+                raise ValueError("x must be >= 0")
+        else:
             raise TypeError("x must be an integer")
-        if value < 0:
-            raise ValueError("x must be >= 0")
-        self.__x = value
 
     @property
     def y(self):
@@ -62,11 +64,13 @@ class Square(Rectangle):
     @y.setter
     def y(self, value):
         """ set private instance attribute y """
-        if type(value) is not int:
+        if type(value) is int:
+            if value >= 0:
+                self.__y = value
+            else:
+                raise ValueError("y must be >= 0")
+        else:
             raise TypeError("y must be an integer")
-        if value < 0:
-            raise ValueError("y must be >= 0")
-        self.__y = value
 
     def update(self, *args, **kwargs):
         """Updates square"""
