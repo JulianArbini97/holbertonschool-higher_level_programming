@@ -99,13 +99,20 @@ class Rectangle(Base):
 
     def display(self):
         """ printer function """
-        if self.__width == 0 or self.__height == 0:
-            print()
-        for i in range(self.__y):
-            print(" " * self.__x)
-        for j in range(self.__height):
-            print(" " * self.__x, end='')
-            print("#" * self.__width)
+        rect = ""
+        if self.__height == 0 or self.__width == 0:
+            print(rect)
+            return
+        for new_l in range(0, self.__y):
+            print("")
+        for i in range(0, self.__height):
+            for k in range(0, self.__x):
+                rect += " "
+            for j in range(0, self.__width):
+                rect += "#"
+            if i < self.__height - 1:
+                rect += "\n"
+        print(rect)
 
     def __str__(self):
         """ values representation """
