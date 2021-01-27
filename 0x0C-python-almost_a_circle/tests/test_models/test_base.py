@@ -364,5 +364,9 @@ class TestingBase(unittest.TestCase):
         s4 = Square.create(**{ 'id': 89, 'size': 1, 'x': 2, 'y': 3 })
         self.assertEqual(s4.__str__(), "[Square] (89) 2/3 - 1")
 
+    def test_load_fromJson(self):
+        """ error save to file"""
+        with self.assertRaises(TypeError):
+            Square.from_json_string()
 if __name__ == "__main__":
     unittest.main()
