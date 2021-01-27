@@ -36,9 +36,9 @@ class Square(Rectangle):
             if value > 0:
                 self.__width = value
             elif value <= 0:
-                raise ValueError("size must be > 0")
+                raise ValueError("width must be > 0")
         else:
-            raise TypeError("size must be an integer")
+            raise TypeError("width must be an integer")
 
     @property
     def x(self):
