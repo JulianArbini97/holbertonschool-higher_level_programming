@@ -20,9 +20,8 @@ class Square(Rectangle):
 
     def __str__(self):
         """ overriding the __str__ method that returns a custom string """
-        Mensaje = "[Square] ({:d}) {:d}/{:d} - {:d}"\
-            .format(self.id, self.__x, self.__y, self.__width)
-        return Mensaje
+        return ("[Square] ({:d}) {:d}/{:d} - {:d}".format(self.id,
+                self.__x, self.__y, self.__width))
 
     @property
     def size(self):
@@ -35,6 +34,7 @@ class Square(Rectangle):
         if type(value) is int:
             if value > 0:
                 self.__width = value
+                self.__height = value
             elif value <= 0:
                 raise ValueError("width must be > 0")
         else:
