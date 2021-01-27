@@ -251,7 +251,7 @@ class TestingSquare(unittest.TestCase):
         with self.assertRaises(TypeError):
             sq9 = Square(2)
             sq9.update(1, 2.7)
-        
+
         with self.assertRaises(TypeError):
             sq10 = Square(2)
             sq10.update(1, float('NaN'))
@@ -285,7 +285,7 @@ class TestingSquare(unittest.TestCase):
         with self.assertRaises(TypeError):
             sq6 = Square(1, 2, 3, 4, 5)
             sq6 = str(self)
-        
+
         with self.assertRaises(TypeError):
             sq7 = Square(None)
             sq7 = str(self)
@@ -297,10 +297,10 @@ class TestingSquare(unittest.TestCase):
 
         sq3 = Square(1, 2)
         self.assertEqual(str(sq3), "[Square] (79) 2/0 - 1")
-        
-        sq4 = Square(1, 2 ,3)
+
+        sq4 = Square(1, 2, 3)
         self.assertEqual(str(sq4), "[Square] (80) 2/3 - 1")
-    
+
         sq5 = Square(1, 2, 3, 4)
         self.assertEqual(str(sq5), "[Square] (4) 2/3 - 1")
 
@@ -311,7 +311,7 @@ class TestingSquare(unittest.TestCase):
         MyDict = {'id': 4, 'size': 1, 'x': 2, 'y': 3}
         for i in MyDict:
             self.assertEqual(sq1[i], MyDict[i])
-        
+
     def test2_Sq_todict(self):
         """Square test to_dictionary 2"""
         sq = Square(1)
