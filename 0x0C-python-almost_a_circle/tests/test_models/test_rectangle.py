@@ -5,6 +5,7 @@ import io
 import unittest
 from models.base import Base
 from models.rectangle import Rectangle
+from models.square import Square
 
 
 class TestingRectangle(unittest.TestCase):
@@ -149,6 +150,8 @@ class TestingRectangle(unittest.TestCase):
         with self.assertRaises(TypeError):
             r14 = Rectangle(13, 7, 1e100)
 
+    def test3_data_check_1(self):
+        """ data check """
         rect = Rectangle(9, 8, 0)
         self.assertEqual(rect.x, 0)
 
@@ -193,6 +196,8 @@ class TestingRectangle(unittest.TestCase):
         with self.assertRaises(TypeError):
             r14 = Rectangle(12, 13, 7, 1e100)
 
+    def test4_data_check_0(self):
+        """ data check """
         rect = Rectangle(9, 8, 6, 0)
         self.assertEqual(rect.y, 0)
 
@@ -238,6 +243,8 @@ class TestingRectangle(unittest.TestCase):
         rect7.update()
         self.assertEqual(str(rect7), "[Rectangle] (1) 1/1 - 1/1")
 
+    def test2_update(self):
+        """ test update """
         with self.assertRaises(TypeError):
             rect13 = Rectangle(7, 7, 7, 7, 7)
             rect13.update(1, True)
@@ -280,15 +287,19 @@ class TestingRectangle(unittest.TestCase):
             rect2 = Rectangle(1)
             rect2 = str(self)
 
+    def test2_stRect(self):
+        """ test str """
         rect3 = Rectangle(1, 2)
-        self.assertEqual(str(rect3), "[Rectangle] (67) 0/0 - 1/2")
+        self.assertEqual(str(rect3), "[Rectangle] (35) 0/0 - 1/2")
 
         rect4 = Rectangle(1, 2, 3)
-        self.assertEqual(str(rect4), "[Rectangle] (68) 3/0 - 1/2")
+        self.assertEqual(str(rect4), "[Rectangle] (36) 3/0 - 1/2")
 
         rect5 = Rectangle(1, 2, 3, 4, 5)
         self.assertEqual(str(rect5), "[Rectangle] (5) 3/4 - 1/2")
 
+    def test3_stRect(self):
+        """ test str """
         with self.assertRaises(TypeError):
             rect6 = Rectangle(1, 2, 3, 4, 5, 6)
             rect6 = str(self)
@@ -309,7 +320,7 @@ class TestingRectangle(unittest.TestCase):
         """ test to_dictionary """
         rect = Rectangle(1, 2)
         rect1 = rect.to_dictionary()
-        MyDict = {'id': 41, 'width': 1, 'height': 2, 'x': 0, 'y': 0}
+        MyDict = {'id': 37, 'width': 1, 'height': 2, 'x': 0, 'y': 0}
         for i in MyDict:
             self.assertEqual(rect1[i], MyDict[i])
 
@@ -335,6 +346,12 @@ class TestingRectangle(unittest.TestCase):
         rect1.width = 3
         self.assertEqual(rect1.width, 3)
 
+        rect1 = Rectangle(1, 2, 3, 4, 5)
+        rect1.x = 0
+        self.assertEqual(rect1.x, 0)
+
+    def test6_reassign(self):
+        """ test reasign values """
         with self.assertRaises(ValueError):
             rect2 = Rectangle(1, 2, 3, 4, 5)
             rect2.width = -1
@@ -358,10 +375,6 @@ class TestingRectangle(unittest.TestCase):
         with self.assertRaises(ValueError):
             rect7 = Rectangle(1, 2, 3, 4, 5)
             rect7.height = 0
-
-        rect1 = Rectangle(1, 2, 3, 4, 5)
-        rect1.x = 0
-        self.assertEqual(rect1.x, 0)
 
         with self.assertRaises(TypeError):
             rect8 = Rectangle(1, 2, 3, 4, 5)
@@ -397,6 +410,8 @@ class TestingRectangle(unittest.TestCase):
         r2.update(width=3)
         self.assertEqual(str(r2), "[Rectangle] (4) 10/10 - 3/10")
 
+    def test12_update_kwargs(self):
+        """ test updating kwargs """
         with self.assertRaises(ValueError):
             r3 = Rectangle(10, 10, 10, 10)
             r3.update(width=0)
@@ -425,13 +440,15 @@ class TestingRectangle(unittest.TestCase):
         r1.display()
         self.assertEqual(captureOutput.getvalue(), ("##\n##\n##\n"))
 
+    def test2_display_1(self):
+        """ test output """
         with self.assertRaises(TypeError):
             """ test output 2 """
             r2 = Rectangle()
             captureOutput = io.StringIO()
             sys.stdout = captureOutput
             r2.display()
-        
+
         with self.assertRaises(TypeError):
             """ test output 3 """
             r3 = Rectangle(None)

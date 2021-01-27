@@ -293,13 +293,13 @@ class TestingSquare(unittest.TestCase):
     def test2_str_Square(self):
         """ test str for square """
         sq2 = Square(1)
-        self.assertEqual(str(sq2), "[Square] (78) 0/0 - 1")
+        self.assertEqual(str(sq2), "[Square] (67) 0/0 - 1")
 
         sq3 = Square(1, 2)
-        self.assertEqual(str(sq3), "[Square] (79) 2/0 - 1")
+        self.assertEqual(str(sq3), "[Square] (68) 2/0 - 1")
 
         sq4 = Square(1, 2, 3)
-        self.assertEqual(str(sq4), "[Square] (80) 2/3 - 1")
+        self.assertEqual(str(sq4), "[Square] (69) 2/3 - 1")
 
         sq5 = Square(1, 2, 3, 4)
         self.assertEqual(str(sq5), "[Square] (4) 2/3 - 1")
@@ -316,7 +316,7 @@ class TestingSquare(unittest.TestCase):
         """Square test to_dictionary 2"""
         sq = Square(1)
         sq1 = sq.to_dictionary()
-        MyDict = {'id': 69, 'size': 1, 'x': 0, 'y': 0}
+        MyDict = {'id': 58, 'size': 1, 'x': 0, 'y': 0}
         for i in MyDict:
             self.assertEqual(sq1[i], MyDict[i])
 
