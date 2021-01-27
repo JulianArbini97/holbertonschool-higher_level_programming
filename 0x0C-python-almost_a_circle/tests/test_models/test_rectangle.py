@@ -440,6 +440,14 @@ class TestingRectangle(unittest.TestCase):
         r1.display()
         self.assertEqual(captureOutput.getvalue(), ("##\n##\n##\n"))
 
+    def test3_display_1(self):
+        """ test output 3 """
+        r9 = Rectangle(1, 1, 1, 1, 1)
+        captureOutput = io.StringIO()
+        sys.stdout = captureOutput
+        r9.display()
+        self.assertEqual(captureOutput.getvalue(), ("\n #\n"))
+
     def test2_display_1(self):
         """ test output """
         with self.assertRaises(TypeError):

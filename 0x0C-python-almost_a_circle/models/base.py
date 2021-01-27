@@ -67,6 +67,8 @@ class Base:
                 for i in lista:
                     MyList.append(cls.create(**i))
             return MyList
+        else:
+            return []
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
