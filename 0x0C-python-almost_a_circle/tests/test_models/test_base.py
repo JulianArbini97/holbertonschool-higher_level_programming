@@ -268,5 +268,40 @@ class TestingBase(unittest.TestCase):
         self.assertEqual([i.__dict__ for i in list_rectangles_input],
                          [i.__dict__ for i in list_rectangles_output])
 
+    def test_create0(self):
+        """ test create funct """
+        Base._Base__nb_objects = 0
+        with self.assertRaises(TypeError):
+            rect1 = Rectangle(3)
+            rect1_dictionary = rect1.to_dictionary()
+            rect2 = Rectangle.create(**rect1_dictionary)
+    
+    def test_create1(self):
+        """ test create funct """
+        Base._Base__nb_objects = 0
+        rect1 = Rectangle(3, 5)
+        rect1_dictionary = rect1.to_dictionary()
+        rect2 = Rectangle.create(**rect1_dictionary)
+        self.assertEqual((rect1 == rect2), False)
+        self.assertEqual((rect1 is rect2), False)
+
+    def test_create2(self):
+        """ test create funct """
+        Base._Base__nb_objects = 0
+        rect1 = Rectangle(3, 5, 6)
+        rect1_dictionary = rect1.to_dictionary()
+        rect2 = Rectangle.create(**rect1_dictionary)
+        self.assertEqual((rect1 == rect2), False)
+        self.assertEqual((rect1 is rect2), False)
+
+    def test_create2(self):
+        """ test create funct """
+        Base._Base__nb_objects = 0
+        rect1 = Rectangle(3, 5, 6, 7)
+        rect1_dictionary = rect1.to_dictionary()
+        rect2 = Rectangle.create(**rect1_dictionary)
+        self.assertEqual((rect1 == rect2), False)
+        self.assertEqual((rect1 is rect2), False)
+
 if __name__ == "__main__":
     unittest.main()
