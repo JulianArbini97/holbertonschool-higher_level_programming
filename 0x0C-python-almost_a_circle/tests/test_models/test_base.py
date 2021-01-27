@@ -232,6 +232,14 @@ class TestingBase(unittest.TestCase):
         with open("Rectangle.json") as MyFile:
             self.assertEqual(MyFile.read(), "[]")
 
+    def test2_json_to_file(self):
+        """ load from file """
+        Base._Base__nb_objects = 0
+        MyList = []
+        Square.save_to_file(MyList)
+        with open("Rectangle.json") as MyFile:
+            self.assertEqual(MyFile.read(), "[]")
+
     def test1_dict_to_inst(self):
         """ dict to instance """
         Base._Base__nb_objects = 0
