@@ -4,6 +4,7 @@ import unittest
 import sys
 import io
 import os
+import json
 from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
@@ -368,6 +369,18 @@ class TestingBase(unittest.TestCase):
         """ error save to file"""
         with self.assertRaises(TypeError):
             Square.from_json_string()
+
+    def test_json_to_file10(self):
+        """ test json string into filee"""
+        Base._Base__nb_objects = 0
+        s1 = Square(1, 1, 1, 1)
+        s2 = Square(2, 2, 2, 2)
+        list_sq_input = [s1, s2]
+        Square.save_to_file(list_sq_input)
+        with open("Square.json", "r") as my_file:
+            list_sq_output = [s1.to_dictionary(), s2.to_dictionary()]
+            self.assertEqual(json.dumps(list_sq_output), my_file.read())
+
 
 if __name__ == "__main__":
     unittest.main()
