@@ -303,5 +303,16 @@ class TestingBase(unittest.TestCase):
         self.assertEqual((rect1 == rect2), False)
         self.assertEqual((rect1 is rect2), False)
 
+    def test19_create1(self):
+        """ test create method """
+        s1 = Square.create(**{ 'id': 89 })
+        self.assertEqual(s1.__str__(), "[Square] (89) 0/0 - 3")
+
+        s2 = Square.create(**{ 'id': 89, 'size': 1 })
+        self.assertEqual(s2.__str__(), "[Square] (89) 0/0 - 1")
+
+        s3 = Square.create(**{ 'id': 89, 'size': 1, 'x': 2 })
+        self.assertEqual(s3.__str__(), "[Square] (89) 2/0 - 1")
+
 if __name__ == "__main__":
     unittest.main()
