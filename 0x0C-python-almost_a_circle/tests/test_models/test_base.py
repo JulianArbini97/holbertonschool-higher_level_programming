@@ -268,6 +268,16 @@ class TestingBase(unittest.TestCase):
         self.assertEqual([i.__dict__ for i in list_rectangles_input],
                          [i.__dict__ for i in list_rectangles_output])
 
+    def test2_load_from_file(self):
+        """ load from file """
+        Base._Base__nb_objects = 0
+        MyList = []
+        Square.save_to_file(MyList)
+        list_square_out = Square.load_from_file()
+        self.assertEqual([i.__dict__ for i in MyList], 
+                         [i.__dict__ for i in list_square_out])
+            
+
     def test_create0(self):
         """ test create funct """
         Base._Base__nb_objects = 0
