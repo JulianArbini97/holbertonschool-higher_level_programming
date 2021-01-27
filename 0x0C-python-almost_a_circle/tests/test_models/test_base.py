@@ -385,5 +385,11 @@ class TestingBase(unittest.TestCase):
         with self.assertRaises(AttributeError):
             Base.save_to_string()
 
+    def test_stf_None(self):
+        """test save_to_file with None"""
+        Square.save_to_file(None)
+        with open("Square.json", "r") as f:
+            self.assertEqual("[]", f.read())
+
 if __name__ == "__main__":
     unittest.main()
