@@ -29,11 +29,9 @@ class Rectangle {
 }
 module.exports = Rectangle;
 
-class Square extends Rectangle {
-  constructor (size) {
-    super(size, size);
-  }
+const ParentSquare = require('./5-square');
 
+class Square extends ParentSquare {
   charPrint (c) {
     let i = 0;
     if (c == null) {
