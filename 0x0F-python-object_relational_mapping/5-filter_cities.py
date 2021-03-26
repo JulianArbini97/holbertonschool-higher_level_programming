@@ -9,7 +9,7 @@ if __name__ == "__main__":
     My_pass = argv[2]
     My_db = argv[3]
     MyDataBase = MySQLdb.connect(host=My_host, user=My_user, passwd=My_pass,
-                           db=My_db, port=3306)
+                                 db=My_db, port=3306)
     The_cursor = MyDataBase.cursor()
     The_cursor.execute("SELECT cities.name FROM states INNER JOIN cities \
                         ON states.id = cities.state_id WHERE states.name = %s \

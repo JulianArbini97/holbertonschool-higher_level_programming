@@ -9,10 +9,11 @@ if __name__ == "__main__":
     My_pass = argv[2]
     My_db = argv[3]
     MyDataBase = MySQLdb.connect(host=My_host, user=My_user, passwd=My_pass,
-                           db=My_db, port=3306)
+                                 db=My_db, port=3306)
     The_cursor = MyDataBase.cursor()
     The_cursor.execute("SELECT city.id, city.name, stat.name FROM cities city \
-                        INNER JOIN states stat ON city.state_id = stat.id ORDER BY city.id ASC;")
+                        INNER JOIN states stat ON city.state_id = stat.id \
+                        ORDER BY city.id ASC;")
     rows = The_cursor.fetchall()
     for row in rows:
         print(row)
