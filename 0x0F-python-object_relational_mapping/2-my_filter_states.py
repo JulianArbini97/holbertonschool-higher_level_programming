@@ -15,6 +15,7 @@ if __name__ == "__main__":
                         ORDER BY id ASC".format(argv[4]))
     rows = The_cursor.fetchall()
     for row in rows:
-        print(row)
+        if row[1] == argv[4]:
+            print(row)
     The_cursor.close()
     MyDataBase.close()
