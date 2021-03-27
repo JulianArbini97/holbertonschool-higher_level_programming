@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ Script that lists states with a name starting with N """
-from sys import argv
 import MySQLdb
+from sys import argv
 
 if __name__ == "__main__":
     My_host = "localhost"
@@ -10,11 +10,10 @@ if __name__ == "__main__":
     My_db = argv[3]
     MyDataBase = MySQLdb.connect(host=My_host, user=My_user, passwd=My_pass,
                                  db=My_db, port=3306)
-    The_cursor = MyDataBase.cursor()
-    The_cursor.execute("SELECT * FROM states ORDER BY id ASC;")
-    rows = The_cursor.fetchall()
+    cur = MyDataBase.cursor()
+    cur.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC;")
+    rows = cur.fetchall()
     for row in rows:
-        if row[1][0] == "N":
-            print(row)
-    The_cursor.close()
+        print(row)
+    cur.close()
     MyDataBase.close()
