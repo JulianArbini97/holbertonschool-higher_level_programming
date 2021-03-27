@@ -11,8 +11,8 @@ if __name__ == "__main__":
     MyDataBase = MySQLdb.connect(host=My_host, user=My_user, passwd=My_pass,
                                  db=My_db, port=3306)
     The_cursor = MyDataBase.cursor()
-    The_cursor.execute("SELECT * FROM states WHERE name LIKE \
-                        'N%' ORDER BY id ASC;")
+    The_cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' \
+                        ORDER BY id ASC;")
     rows = The_cursor.fetchall()
     for row in rows:
         print(row)
