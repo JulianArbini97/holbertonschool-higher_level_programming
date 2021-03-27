@@ -9,7 +9,7 @@ if __name__ == "__main__":
     My_pass = argv[2]
     My_db = argv[3]
     MyDataBase = MySQLdb.connect(host=My_host, user=My_user, passwd=My_pass,
-                                 db=My_db, port=3306, charset="utf8")
+                                 db=My_db, port=3306)
     The_cursor = MyDataBase.cursor()
     The_cursor.execute("SELECT * FROM states WHERE states.name LIKE \
                         'N%' ORDER BY id ASC;")
