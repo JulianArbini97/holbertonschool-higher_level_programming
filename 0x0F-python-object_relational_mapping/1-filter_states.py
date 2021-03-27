@@ -1,15 +1,23 @@
 #!/usr/bin/python3
-""" Script that lists states with a name starting with N """
+"""This module makes a MySQL query."""
 import MySQLdb
 from sys import argv
 
+
 if __name__ == "__main__":
-    MyDataBase = MySQLdb.connect(host="localhost", user=argv[1],
-                                 passwd=argv[2], db=argv[3], port=3306)
-    cur = MyDataBase.cursor()
-    cur.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC;")
-    rows = cur.fetchall()
-    for row in rows:
+    # Open connection to database.
+    db = MySQLdb.connect(host="localhost", user=argv[1],
+                         passwd=argv[2], db=argv[3], port=3306)
+    cursor = db.cursor()
+# MySQL Query.
+    sql = "SELECT * FROM states \
+           WHERE name LIKE 'N%' \
+           ORDER BY states.id ASC;"
+# Execute query.
+    cursor.execute(sql)
+    results = cursor.fetchall()
+    for row in results:
         print(row)
-    cur.close()
-    MyDataBase.close()
+# Close the connections.
+    cursor.close()
+    db.close()
