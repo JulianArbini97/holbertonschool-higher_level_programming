@@ -16,11 +16,13 @@ if __name__ == "__main__":
                         ORDER BY cities.id;", (argv[4],))
     rows = The_cursor.fetchall()
     rows = [i[0] for i in rows]
-    for i in range(len(rows)):
-        if i is len(rows) - 1:
-            print("{}".format(rows[i]))
-        else:
-            print("{}, ".format(rows[i]), end="")
-
+    if rows:
+        for i in range(len(rows)):
+            if i is len(rows) - 1:
+                print("{}".format(rows[i]))
+            else:
+                print("{}, ".format(rows[i]), end="")
+    else:
+        print()
     The_cursor.close()
     MyDataBase.close()
