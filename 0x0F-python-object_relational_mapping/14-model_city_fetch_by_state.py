@@ -13,7 +13,7 @@ if __name__ == '__main__':
     Session = sessionmaker(engine)
     session = Session()
     first = session.query(City, State).filter(State.id == City.state_id)
-    filt = first.order_by(City.id).all()
+    filt = first.order_by(City.id)
     for city, state in filt:
         print("{}: ({}) {}".format(state.name, city.id, city.name))
 
