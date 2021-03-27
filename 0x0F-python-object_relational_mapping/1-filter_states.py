@@ -4,12 +4,8 @@ import MySQLdb
 from sys import argv
 
 if __name__ == "__main__":
-    My_host = "localhost"
-    My_user = argv[1]
-    My_pass = argv[2]
-    My_db = argv[3]
-    MyDataBase = MySQLdb.connect(host=My_host, user=My_user, passwd=My_pass,
-                                 db=My_db, port=3306)
+    MyDataBase = MySQLdb.connect(host="localhost", user=argv[1],
+                         passwd=argv[2], db=argv[3], port=3306)
     cur = MyDataBase.cursor()
     cur.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC;")
     rows = cur.fetchall()
