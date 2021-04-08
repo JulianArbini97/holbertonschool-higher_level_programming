@@ -31,7 +31,7 @@ def find_peak(integer_list):
 
     if middle > prev_int and middle > next_int:
         return middle
-    elif middle < prev_int and middle > next_int:
+    elif middle < prev_int:
         return find_peak(first_half)
     else:
         return find_peak(second_half)
