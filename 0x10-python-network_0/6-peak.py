@@ -27,7 +27,7 @@ def find_peak(integer_list):
     first_half = integer_list[:middle_point]
     # print("PRIMERA MITAD {}".format(first_half))
     second_half = integer_list[middle_point + 1:]
-    print("SEGUNDA MITAD {}".format(second_half))
+    # print("SEGUNDA MITAD {}".format(second_half))
 
     if middle > prev_int and middle > next_int:
         return middle
