@@ -2,27 +2,27 @@
 """ Test function find_peak """
 
 
-def find_peak(integer_list):
+def find_peak(int_list):
     """ Finding the peak of a list """
     """ Board cases """
     # middle_point = len(integer_list)/2
     # print (middle_point)
 
-    if len(integer_list) == 0:
+    if len(int_list) == 0:
         return None
-    if len(integer_list) == 1:
-        return integer_list[0]
-    if len(integer_list) == 2:
-        return max(integer_list)
+    if len(int_list) == 1:
+        return int_list[0]
+    if len(int_list) == 2:
+        return max(int_list)
 
-    if len(integer_list) % 2 == 0:
-        middle_point = int(len(integer_list)/2)
+    if len(int_list) % 2 == 0:
+        mid_point = int(len(int_list)/2)
     else:
-        middle_point = int((len(integer_list) - 1)/2)
+        mid_point = int((len(int_list) - 1)/2)
 
-    # middle_point = int(len(integer_list)/2)
+    # mid_point = int(len(integer_list)/2)
     # print("PUNTO MEDIO: {}".format(middle_point))
-    middle = integer_list[middle_point]
+    middle = int_list[mid_point]
     # next_int = integer_list[middle_point + 1]
     # prev_int = integer_list[middle_point - 1]
     # first_half = integer_list[:middle_point]
@@ -30,9 +30,9 @@ def find_peak(integer_list):
     # second_half = integer_list[middle_point + 1:]
     # print("SEGUNDA MITAD {}".format(second_half))
 
-    if middle > integer_list[middle_point - 1] and middle > integer_list[middle_point + 1]:
+    if middle > int_list[mid_point - 1] and middle > int_list[mid_point + 1]:
         return middle
-    elif middle < integer_list[middle_point - 1]:
-        return find_peak(integer_list[:middle_point])
+    elif middle < int_list[mid_point - 1]:
+        return find_peak(int_list[:mid_point])
     else:
-        return find_peak(integer_list[middle_point + 1:])
+        return find_peak(int_list[mid_point + 1:])
