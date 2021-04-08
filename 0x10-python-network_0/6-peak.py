@@ -15,7 +15,11 @@ def find_peak(integer_list):
     if len(integer_list) == 2:
         return max(integer_list)
 
-    middle_point = int(len(integer_list)/2)
+    if len(integer_list) % 2 == 0:
+        middle_point = int(len(integer_list)/2)
+    else:
+        middle_point = int((len(integer_list) - 1)/2)
+
     # print("PUNTO MEDIO: {}".format(middle_point))
     middle = integer_list[middle_point]
     next_int = integer_list[middle_point + 1]
