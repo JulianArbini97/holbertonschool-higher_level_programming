@@ -23,16 +23,16 @@ def find_peak(integer_list):
     # middle_point = int(len(integer_list)/2)
     # print("PUNTO MEDIO: {}".format(middle_point))
     middle = integer_list[middle_point]
-    next_int = integer_list[middle_point + 1]
-    prev_int = integer_list[middle_point - 1]
-    first_half = integer_list[:middle_point]
+    # next_int = integer_list[middle_point + 1]
+    # prev_int = integer_list[middle_point - 1]
+    # first_half = integer_list[:middle_point]
     # print("PRIMERA MITAD {}".format(first_half))
-    second_half = integer_list[middle_point + 1:]
+    # second_half = integer_list[middle_point + 1:]
     # print("SEGUNDA MITAD {}".format(second_half))
 
-    if middle > prev_int and middle > next_int:
+    if middle > integer_list[middle_point - 1] and middle > integer_list[middle_point + 1]:
         return middle
-    elif middle < prev_int and middle > next_int:
-        return find_peak(first_half)
+    elif middle < integer_list[middle_point - 1]:
+        return find_peak(integer_list[:middle_point])
     else:
-        return find_peak(second_half)
+        return find_peak(integer_list[middle_point + 1:])
