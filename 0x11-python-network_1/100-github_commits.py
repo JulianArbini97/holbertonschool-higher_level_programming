@@ -5,7 +5,7 @@ from sys import argv
 
 
 if __name__ == "__main__":
-    p = 'https://api.github.com/repos/' + argv[1] + '/' + argv[2] + '/commits'
+    p = 'https://api.github.com/repos/' + argv[2] + '/' + argv[1] + '/commits'
     r = requests.get(p)
     id_result = r.json()
     cont = 0
