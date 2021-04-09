@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Handling Errors """
+""" Python takes in a URL, sends request to URL and displays response """
 import requests
 import sys
 
