@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Sends a POST request to Github API """
+""" Script takes your GitHub and uses the GitHub API to display your id """
 import requests
 from sys import argv
 
