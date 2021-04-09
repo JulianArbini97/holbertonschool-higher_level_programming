@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Script takes your GitHub and uses the GitHub API to display your id """
+""" Script takes your GitHub and uses the GitHub API to display your Id """
 import requests
 from sys import argv
 
